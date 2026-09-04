@@ -4,6 +4,7 @@
  */
 package main.java.edu.ingsoft.colegio.gotitas.service;
 
+import java.sql.SQLException;
 import javafx.collections.ObservableList;
 import main.java.edu.ingsoft.colegio.gotitas.model.Estudiante;
 import main.java.edu.ingsoft.colegio.gotitas.repository.EstudianteRepository;
@@ -21,7 +22,7 @@ public class DashBoardService {
     }
     
     
-    public ObservableList<Estudiante> listStudent() throws Exception{
+    public ObservableList<Estudiante> listStudent(){
         if(estudianteRepository.findAll() == null){
             throw new RuntimeException("Sin datos que mostrar");
         }else{

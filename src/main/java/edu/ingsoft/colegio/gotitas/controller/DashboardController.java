@@ -42,18 +42,18 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        handleLoadTableStudent();
     }    
     
+    @FXML
     private void handleLoadTableStudent(){
-        
         tvColumnIdEstudiante.setCellValueFactory(new PropertyValueFactory<>("idEstudiante"));
         tvColumnNombreEstudiante.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         tvColumnApellidoEstudiante.setCellValueFactory(new PropertyValueFactory<>("apellido"));
         tvColumnCorreo.setCellValueFactory(new PropertyValueFactory<>("correoElectronico"));
         tvColumnSeccion.setCellValueFactory(new PropertyValueFactory<>("nombreSeccion"));
         tvColumnCurso.setCellValueFactory(new PropertyValueFactory<>("nombreCurso"));
-        tvColumnNombreDocente.setCellValueFactory(new PropertyValueFactory<>("nombreDocete"));
+        tvColumnNombreDocente.setCellValueFactory(new PropertyValueFactory<>("nombreDocente"));
         tvColumnApellidoDocente.setCellValueFactory(new PropertyValueFactory<>("apellidoDocente"));
         tvEstudiantes.setItems(dashboardService.listStudent());
     

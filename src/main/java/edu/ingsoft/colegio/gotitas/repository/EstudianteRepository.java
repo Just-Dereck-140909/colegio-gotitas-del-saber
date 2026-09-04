@@ -11,7 +11,7 @@ import main.java.edu.ingsoft.colegio.gotitas.model.Estudiante;
 
 public class EstudianteRepository {
     
-    public ObservableList <Estudiante> findAll() throws Exception{
+    public ObservableList <Estudiante> findAll(){
         
         String sql = "select \n" +
         "e.id_estudiante,\n" +
