@@ -24,8 +24,7 @@ public class MainApp extends Application {
             DataBaseConnection.getConnectionDataBase();
             System.out.println("Conectado");
         }catch(SQLException e){
-                System.out.println("no pos... no funciono guey");
+                System.out.println("Fallo en intento de conexion");
                 }
-        launch();
     }
 }
