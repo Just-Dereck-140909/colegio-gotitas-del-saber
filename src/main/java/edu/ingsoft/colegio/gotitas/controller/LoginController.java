@@ -50,4 +50,9 @@ public class LoginController implements Initializable {
         }
     }
     
+    
+    @FXML
+    public void handleRegistro() throws Exception {
+        sceneManager.showRegistroView();
+    }
 }

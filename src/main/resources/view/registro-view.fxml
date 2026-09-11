@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.edu.ingsoft.colegio.gotitas.controller.RegistroViewController">
+    <stylesheets>
+        <URL value="@/main/resources/css/registro-view.css" />
+    </stylesheets>
+   <children>
+      <GridPane alignment="CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="172.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="228.0" minHeight="10.0" prefHeight="228.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="122.0" fitWidth="121.0" layoutX="240.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/registro-del-usuario.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="273.0" layoutY="142.0" text="Registrate" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label layoutX="175.0" layoutY="14.0" text="Email" />
+                  <PasswordField fx:id="txtFieldPass" layoutX="175.0" layoutY="88.0" prefHeight="25.0" prefWidth="250.0" />
+                  <TextField fx:id="txtFieldEmail" layoutX="175.0" layoutY="31.0" prefHeight="25.0" prefWidth="250.0" />
+                  <Label layoutX="175.0" layoutY="71.0" text="Contraseña" />
+                  <Button layoutX="175.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleRegistro" prefHeight="38.0" prefWidth="110.0" text="Registrarse" />
+                  <Button layoutX="315.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleRegresar" prefHeight="38.0" prefWidth="110.0" text="Regresar" />
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
