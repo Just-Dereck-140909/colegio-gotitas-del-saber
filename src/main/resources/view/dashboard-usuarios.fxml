@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" styleClass="dashboard-background" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.edu.ingsoft.colegio.gotitas.controller.DashboardUsuariosController">
+    <stylesheets>
+        <URL value="@/main/resources/css/dashboard-usuarios.css" />
+    </stylesheets>
+
+    <top>
+        <Label styleClass="dashboard-title" text="Gestión de Usuarios" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="10.0" top="20.0" />
+            </BorderPane.margin>
+        </Label>
+    </top>
+
+    <left>
+        <VBox spacing="12.0" styleClass="form-panel" prefWidth="260.0">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <Label styleClass="form-label" text="Docente" />
+                <ComboBox fx:id="cbDocente" maxWidth="Infinity" styleClass="glass-field" />
+
+                <Label styleClass="form-label" text="Email" />
+                <TextField fx:id="txtEmail" styleClass="glass-field" />
+
+                <Label styleClass="form-label" text="Contraseña" />
+                <PasswordField fx:id="txtPassword" promptText="Contraseña" styleClass="glass-field" />
+
+                <Label styleClass="form-label" text="Rol" />
+                <ComboBox fx:id="cbRol" maxWidth="Infinity" styleClass="glass-field" />
+
+                <VBox spacing="8.0">
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                    <children>
+                        <Button fx:id="btnAgregar" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleAgregar" styleClass="primary-button" text="Agregar" />
+                        <Button fx:id="btnActualizar" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleActualizar" styleClass="primary-button" text="Actualizar" />
+                        <Button fx:id="btnEliminar" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleEliminar" styleClass="danger-button" text="Eliminar" />
+                        <Button fx:id="btnLimpiar" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleLimpiarCampos" styleClass="secondary-button" text="Limpiar" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="table-panel">
+            <padding>
+                <Insets bottom="20.0" left="10.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <TableView fx:id="tvUsuarios" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="tvColumnIdUsuario" prefWidth="90.0" text="ID" />
+                        <TableColumn fx:id="tvColumnDocente" prefWidth="180.0" text="Docente" />
+                        <TableColumn fx:id="tvColumnEmail" prefWidth="200.0" text="Email" />
+                        <TableColumn fx:id="tvColumnRol" prefWidth="100.0" text="Rol" />
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER_RIGHT">
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#handleLoadTableUsuarios" styleClass="secondary-button" text="Refrescar" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
