@@ -12,7 +12,7 @@ public class DataBaseConnection {
     
     public static Connection getConnectionDataBase() throws SQLException{
         if(connection == null || connection.isClosed()){
-            connection = DriverManager.getConnection(Credentials.URL_MYSQL_DB, Credentials.USER_DB, Credentials.PASS_DB);
+            connection = DriverManager.getConnection(Credentials.DB_URL, Credentials.DB_USER, Credentials.DB_PASS);
         }
         return connection;
     }
