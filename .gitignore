@@ -6,3 +6,4 @@
 #archivos de compilacion
 *.class
 *.jar
+nbproject/project.properties
